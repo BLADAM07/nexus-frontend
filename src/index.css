@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Aldrich', sans-serif !important;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif !important;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e1ff00;
+}
+
+/* Class Glow Effects */
+.glow-cosmic {
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.25);
+}
+.glow-tech {
+  box-shadow: 0 0 15px rgba(0, 128, 255, 0.25);
+}
+.glow-mutant {
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.25);
+}
+.glow-skill {
+  box-shadow: 0 0 15px rgba(255, 51, 68, 0.25);
+}
+.glow-science {
+  box-shadow: 0 0 15px rgba(0, 204, 102, 0.25);
+}
+.glow-mystic {
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+}
