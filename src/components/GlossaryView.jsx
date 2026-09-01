@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, FileSpreadsheet } from 'lucide-react';
+import { Shield, Zap, Crosshair } from 'lucide-react';
 
 export default function GlossaryView({ glossaryList = [] }) {
   const [search, setSearch] = useState('');
@@ -39,32 +39,56 @@ export default function GlossaryView({ glossaryList = [] }) {
           </div>
         </div>
 
-        {/* Premium Dataset Download Banner */}
-        <div className="my-8 bg-gradient-to-r from-[#141418] to-[#0c0c0e] border border-[#2a2a30] p-5 sm:p-6 rounded-lg flex flex-col sm:flex-row items-center justify-between gap-5 shadow-xl relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-1 h-full bg-brand-yellow group-hover:bg-white transition-colors duration-300"></div>
-          
-          <div className="flex items-center space-x-4 sm:space-x-5 z-10">
-            <div className="bg-[#1a1a20] p-3 rounded-full border border-[#333] shadow-inner group-hover:border-gray-500 transition-colors">
-              <FileSpreadsheet className="w-7 h-7 text-brand-yellow group-hover:text-white transition-colors duration-300" />
-            </div>
-            <div>
-              <h3 className="text-white font-extrabold tracking-widest text-sm sm:text-base uppercase drop-shadow-md">
-                Complete MCOC Roster Dataset
-              </h3>
-              <p className="text-gray-400 text-xs sm:text-sm font-inter mt-1 leading-relaxed">
-                Download the official master Excel sheet containing tier lists, class info, and synergy data.
+        {/* Core Game Mechanics Spotlight */}
+        <div className="my-8">
+          <h3 className="text-xl sm:text-2xl font-extrabold tracking-wider text-white mb-6 border-l-4 border-brand-yellow pl-3">
+            CORE COMBAT MECHANICS
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Parry Card */}
+            <div className="bg-gradient-to-br from-[#141418] to-[#0c0c0e] border border-[#2a2a30] p-6 rounded-lg shadow-xl relative overflow-hidden group hover:border-brand-yellow transition-all duration-300 hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-brand-yellow opacity-5 rounded-bl-full group-hover:opacity-10 transition-opacity"></div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-[#1a1a20] p-2.5 rounded border border-[#333] group-hover:border-brand-yellow transition-colors duration-300">
+                  <Shield className="w-5 h-5 text-brand-yellow" />
+                </div>
+                <h4 className="text-white font-extrabold tracking-widest text-lg uppercase drop-shadow-md">Parry</h4>
+              </div>
+              <p className="text-gray-400 text-sm font-inter leading-relaxed">
+                Blocking an attack at the exact moment it connects. A successful parry reduces incoming damage significantly and inflicts a Stun debuff on the opponent, opening them up for a combo.
               </p>
             </div>
-          </div>
 
-          <a 
-            href="/excle/MCOC_dataset.xlsx" 
-            download
-            className="w-full sm:w-auto flex items-center justify-center space-x-2 bg-brand-yellow hover:bg-white text-black px-6 py-3 rounded font-black text-xs sm:text-sm tracking-wider transition-all duration-300 transform hover:-translate-y-0.5 shadow-[0_0_15px_rgba(255,255,0,0.15)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] z-10"
-          >
-            <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span>DOWNLOAD .XLSX</span>
-          </a>
+            {/* Dexterity Card */}
+            <div className="bg-gradient-to-br from-[#141418] to-[#0c0c0e] border border-[#2a2a30] p-6 rounded-lg shadow-xl relative overflow-hidden group hover:border-blue-500 transition-all duration-300 hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500 opacity-5 rounded-bl-full group-hover:opacity-10 transition-opacity"></div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-[#1a1a20] p-2.5 rounded border border-[#333] group-hover:border-blue-500 transition-colors duration-300">
+                  <Zap className="w-5 h-5 text-blue-500" />
+                </div>
+                <h4 className="text-white font-extrabold tracking-widest text-lg uppercase drop-shadow-md">Dexterity</h4>
+              </div>
+              <p className="text-gray-400 text-sm font-inter leading-relaxed">
+                Swiping back at the right time to dodge an incoming attack entirely. This grants a Precision buff, increasing the critical rating of your next attack. Crucial for avoiding special attacks.
+              </p>
+            </div>
+
+            {/* Intercept Card */}
+            <div className="bg-gradient-to-br from-[#141418] to-[#0c0c0e] border border-[#2a2a30] p-6 rounded-lg shadow-xl relative overflow-hidden group hover:border-red-500 transition-all duration-300 hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-red-500 opacity-5 rounded-bl-full group-hover:opacity-10 transition-opacity"></div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="bg-[#1a1a20] p-2.5 rounded border border-[#333] group-hover:border-red-500 transition-colors duration-300">
+                  <Crosshair className="w-5 h-5 text-red-500" />
+                </div>
+                <h4 className="text-white font-extrabold tracking-widest text-lg uppercase drop-shadow-md">Intercept</h4>
+              </div>
+              <p className="text-gray-400 text-sm font-inter leading-relaxed">
+                Attacking the opponent just as they dash towards you, hitting them before their attack lands. This bypasses their block and is essential against aggressive or unblockable opponents.
+              </p>
+            </div>
+
+          </div>
         </div>
 
         {/* Glossary Cards */}
