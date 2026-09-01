@@ -23,9 +23,9 @@ export default function TierListView({
         {/* Header */}
         <div className="pb-6 border-b border-[#222226] mb-8">
           <div className="flex items-center space-x-2">
-            <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 tracking-wider">
+            {/* <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 tracking-wider">
               ACT 8 & BATTLEGROUNDS META
-            </span>
+            </span> */}
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-white">
               S-TIER STORY & META CHAMPIONS
             </h2>
